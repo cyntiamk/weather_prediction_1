@@ -9,6 +9,6 @@ Steps so far accomplished:
 5. Checked for linearity of features to decide which features to utilize in the model.
 
 ### Tools/Resources
-Python: Pandas, Sklearn, Numpy
-File type: JSON 
-Source: www.openweathermap.org
+- Python: Pandas, Sklearn, Numpy
+- File type: JSON 
+- Source: www.openweathermap.org
