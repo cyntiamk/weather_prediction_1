@@ -1,4 +1,5 @@
 # Weather prediction (IN PROGRESS)
+Using a Machine Learning model, try to predict weather temperatures.
 
 Steps so far accomplished:
 1. Aquired daily historical weather dataset from Open Weather for the city of Kyoto, Japan (between January 1, 2017 and December 31, 2018)
@@ -7,3 +8,7 @@ Steps so far accomplished:
 4. Calculated Dew Point Temperatures.
 5. Checked for linearity of features to decide which features to utilize in the model.
 
+### Tools/Resources
+Python: Pandas, Sklearn, Numpy
+File type: JSON 
+Source: www.openweathermap.org
