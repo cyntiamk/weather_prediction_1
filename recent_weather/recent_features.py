@@ -79,8 +79,12 @@ def run_all():
     ams_initial = 'Ams'
     ams_name = "amsterdam"
     create_recent_features(ams_path, ams_initial, ams_name)
+
+    irv_path = 'irvine_recent.csv'
+    irv_initial = 'Irv'
+    irv_name = "irvine_recent"
+    create_recent_features(irv_path, irv_initial, irv_name)
     
 while(True):
     run_all()
     time.sleep(86400)
-    

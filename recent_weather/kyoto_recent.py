@@ -11,14 +11,13 @@ import os
 # import api_key from config file
 from config import api_key
 
-def grab_json(city_name, city_csv_name):   
+def grab_kyoto():
     data = []
-
     url = "http://api.openweathermap.org/data/2.5/weather?"
     units = "metric"
-    city = url + "appid=" + api_key + "&q=" + city_name +"&units="+ units
+    kyoto = url + "appid=" + api_key + "&q=" + 'Kyoto'+"&units="+ units
 
-    weather_response = requests.get(city)
+    weather_response = requests.get(kyoto)
     data.append(weather_response.json())
 
     date_obj = []
@@ -66,7 +65,7 @@ def grab_json(city_name, city_csv_name):
         day = datetime.strftime(timestamp,'%Y-%m-%d %H:%M:%S')
         date.append(day) 
 
-    city_weather = {
+    kyoto_weather = {
         "Date": date,
         "Mean_temp": temp,
         "Max_temp": max_temp,
@@ -81,43 +80,15 @@ def grab_json(city_name, city_csv_name):
         "Description": description
     }
 
-    df = pd.DataFrame(city_weather)
+    kyoto_recent = pd.DataFrame(kyoto_weather)
 
     # if file does not exist write header 
-    if not os.path.isfile(city_csv_name + '.csv'):
-       df.to_csv(city_csv_name + '.csv', header='column_names')
+    if not os.path.isfile('kyoto_recent.csv'):
+       kyoto_recent.to_csv('kyoto_recent.csv', header='column_names')
     else: # else it exists so append without writing the header
-       df.to_csv(city_csv_name + '.csv' , mode='a', header=False)
+       kyoto_recent.to_csv('kyoto_recent.csv', mode='a', header=False)
 
-def run_all_json():
-    ams_name = 'Amsterdam'
-    ams_csv_name = 'amsterdam_recent'
-    grab_json(ams_name, ams_csv_name)
-    
-    kyo_name = 'Kyoto'
-    kyo_csv_name = 'kyoto_recent'
-    grab_json(kyo_name, kyo_csv_name)
-    
-    nic_name = 'Nice'
-    nic_csv_name = 'nice_recent'
-    grab_json(nic_name, nic_csv_name)
-    
-    kau_name = 'Lihue'
-    kau_csv_name = 'kauai_recent'
-    grab_json(kau_name, kau_csv_name)
-    
-    sal_name = 'Salvador'
-    sal_csv_name = 'salvador_recent'
-    grab_json(sal_name, sal_csv_name)
-    
-    man_name = 'Manly'
-    man_csv_name = 'manly_recent'
-    grab_json(man_name, man_csv_name)
-
-    irv_name = 'Irvine'
-    irv_csv_name = 'irvine_recent'
-    grab_json(irv_name, irv_csv_name)
 
 while(True):
-    run_all_json()
+    grab_kyoto()
     time.sleep(3600)
