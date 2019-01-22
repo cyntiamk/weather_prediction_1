@@ -1,0 +1,74 @@
+html,
+body,
+header,
+.view {
+  height: 100%;
+}
+h1 {color: white;}
+.circle{
+  background-color: transparent;
+    border-radius: 200px;
+    border: black 10px solid;
+    color: black;
+    height: 200px;
+    font-weight: bold;
+    font-size: 125px;
+    width: 200px;
+    text-align: center;
+}
+@media (max-width: 740px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 1000px;
+  }
+}
+@media (min-width: 800px) and (max-width: 850px) {
+  html,
+  body,
+  header,
+  .view {
+    height: 650px;
+  }
+}
+
+.top-nav-collapse {
+  background-color: #3f51b5 !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+  background: transparent !important;
+}
+
+@media (max-width: 991px) {
+  .navbar:not(.top-nav-collapse) {
+    background: #3f51b5 !important;
+  }
+}
+
+.rgba-gradient {
+  background: -webkit-linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+  background: -webkit-gradient(linear, 45deg, from(rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%)));
+  background: linear-gradient(to 45deg, rgba(0, 0, 0, 0.7), rgba(72, 15, 144, 0.4) 100%);
+}
+
+.card {
+  background-color: rgba(126, 123, 215, 0.2);
+}
+.panel-transparent {
+        background: none;
+    }
+
+.panel-transparent .panel-heading{
+        background: rgba(122, 130, 136, 0.2)!important;
+    }
+
+.panel-transparent .panel-body{
+        background: rgba(46, 51, 56, 0.2)!important;
+    }
+
+
+h6 {
+  line-height: 1.7;
+}
