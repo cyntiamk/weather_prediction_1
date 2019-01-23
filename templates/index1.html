@@ -1,48 +1,33 @@
+<!DOCTYPE html>
 <html lang="en">
-    <body>
-      <head>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Weather Tomorrow</title>
-        <script src="https://d3js.org/d3.v4.js"></script>
+        <!--<script src="https://d3js.org/d3.v4.js"></script>-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/static/css/style1.css">
+        <link rel="stylesheet" href="/static/css/style.css">
     </head>
+  <body class="change-bg">
 
-        <header>
-          <!-- Navbar -->
-          <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-            <div class="container">
-              <a class="navbar-brand" href="#">
-                <strong>MDB</strong>
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                      <span class="sr-only">(current)</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
-                  </li>
-                </ul>
+
+  <div class="container-fluid">
+        <!-- NAVBAR
+    ================================================== -->
+      <div class="row">
+        <div class="navbar-wrapper">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <nav class="navbar navbar-inverse navbar-static-top">
+              <div class="navbar-header">
                 <form class="form-inline">
                   <div class="row"> 
                     <div class="col-md-2">  
-                    <label for="sel1">Select City</label>  
                     <select class="btn btn-primary dropdown-toggle" name="dropdownSelect" id="dropdownSelect" onchange="get_owm(this.value)"> 
                         <option value="Amsterdam">Amsterdam</option>
                         <option value="Irvine">Irvine</option>
-                        <option value="Kauai">Kauai</option>
+                        <option value="Lihue">Kauai</option>
                         <option value="Kyoto">Kyoto</option>
                         <option value="Nice">Nice</option>
                         <option value="Manly">Manly</option>
@@ -51,79 +36,56 @@
                     </div>  
                   </div>
                 </form>
+                
               </div>
-            </div>
-          </nav>
-          <!-- Navbar -->
-          <!-- Full Page Intro -->
-          <div class="view" style="background-image: url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-            <!-- Mask & flexbox options-->
-            <div class="mask rgba-gradient align-items-center">
-              <!-- Content -->
-              <div class="container">
-                <!--Grid row-->
-                <div class="row mt-5">
-                  <!--Grid column-->
-                  <div class="col-md-6 mb-5 mt-md-0 mt-5 white-text text-center text-md-left">
-                    <div class="panel panel-primary panel-transparent">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">Current Weather</h3>
-                      </div>
-                      <div id= "panel-status" class="panel-body"></div>
-                    </div>
-                  </div>
-                  </div>
-                  <!--Grid column-->
-                  <!--Grid column-->
-                  <div class="col-md-6 col-xl-5 mb-4">
-                    <!--Form-->
-                    <div class="card wow fadeInRight" data-wow-delay="0.3s">
-                      <div class="card-body">
-                        <!--Header-->
-                        <div class="text-center">
-                          <h3 class="white-text">
-                            <i class="fas fa-user white-text"></i> Predicted Temperature:</h3>
-                          <hr class="hr-light">
-                        </div>
-                        <!--Body-->
-                        <div class="md-form">
-                           <p class="circle"><span>75</span></p>
-                        </div>
 
+            </nav>
+          </div>
+        </div>
+      </div>
+      <br>
+      <!-- End of NAVBAR
+      ================================================== -->  
 
-                        
-                      </div>
-                    </div>
-                    <!--/.Form-->
-                  </div>
-                  <!--Grid column-->
-                </div>
-                <!--Grid row-->
-              </div>
-              <!-- Content -->
-            </div>
-            <!-- Mask & flexbox options-->
-          </div>
-          <!-- Full Page Intro -->
-        </header>
-        <!-- Main navigation -->
-        <!--Main Layout-->
-        <main>
-          <div class="container">
-            <!--Grid row-->
-            <div class="row py-5">
-              <!--Grid column-->
-              <div class="col-md-12 text-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-              <!--Grid column-->
-            </div>
-            <!--Grid row-->
-          </div>
-        </main>
-        <!--Main Layout-->
+      <div class="row">
+       <div class="col-md-12 jumbotron text-center">
+         <h2>Weather Tomorrow</h2>
+      </div>
+    </div>
+ 
+<div class="container">
+  <div class="row"> 
+    <div class="col-md-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Current Weather</h3>
+        </div>
+        <div id= "panel-status" class="panel-body"></div>
+      </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            
+        </div>
+        <div class="col-md-4 text-center">
+            <p class="circle"><span id="prediction"></span></p>
+        </div>
+    </div>
+  </div>
+</div> 
+      <div class="row">
+         <div class="col-md-12">
+            <div id="passPie"></div>
+        </div>
+      </div>  
+    </div>
+  </div>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>  
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="/static/js/app.js"></script>
-    </body>
+
+
+</body>
+
 </html>

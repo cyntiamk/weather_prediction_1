@@ -11,76 +11,46 @@
         <link rel="stylesheet" href="/static/css/style.css">
     </head>
   <body background="/static/css/img/kyoto.jpg">
-
-
   <div class="container-fluid">
-        <!-- NAVBAR
-    ================================================== -->
-      <div class="row">
-        <div class="navbar-wrapper">
-          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <nav class="navbar navbar-inverse navbar-static-top">
-              <div class="navbar-header">
-                <form class="form-inline">
-                  <div class="row"> 
-                    <div class="col-md-2">  
-                    <select class="btn btn-primary dropdown-toggle" name="dropdownSelect" id="dropdownSelect" onchange="get_owm(this.value)"> 
-                        <option value="Amsterdam">Amsterdam</option>
-                        <option value="Irvine">Irvine</option>
-                        <option value="Kauai">Kauai</option>
-                        <option value="Kyoto">Kyoto</option>
-                        <option value="Nice">Nice</option>
-                        <option value="Manly">Manly</option>
-                        <option value="Salvador">Salvador</option>
-                    </select>
-                    </div>  
-                  </div>
-                </form>
-                
-              </div>
 
-            </nav>
-          </div>
-        </div>
-      </div>
-      <br>
-      <!-- End of NAVBAR
-      ================================================== -->  
-
-      <div class="row">
-       <div class="col-md-12 jumbotron text-center">
-         <h2>Weather Tomorrow</h2>
-      </div>
-    </div>
- 
-<div class="container">
   <div class="row"> 
-    <div class="col-md-4"> 
-      <div class="panel panel-primary">
+    <div class="col-md-2">  
+    <select class="btn btn-light dropdown-toggle" name="dropdownSelect" id="dropdownSelect" onchange="get_owm(this.value)"> 
+        <option value="Amsterdam">Amsterdam</option>
+        <option value="Irvine">Irvine</option>
+        <option value="Lihue">Kauai</option>
+        <option value="Kyoto">Kyoto</option>
+        <option value="Nice">Nice</option>
+        <option value="Manly">Manly</option>
+        <option value="Salvador">Salvador</option>
+    </select>
+    </div>  
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="col-md-2" style='position:absolute;bottom:23em;left:0;'> 
+    <div class="panel-position">
+      <div class="panel panel-primary" style="opacity:0.75">
         <div class="panel-heading">
           <h3 class="panel-title">Current Weather</h3>
         </div>
-        <div id= "panel-status" class="panel-body"></div>
-      </div>
+      <div id= "panel-status" class="panel-body"></div>
     </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            
-        </div>
-        <div class="col-md-4 text-center">
-            <p class="circle"><span>75</span></p>
-        </div>
     </div>
   </div>
-</div> 
-      <div class="row">
-         <div class="col-md-12">
-            <div id="passPie"></div>
+  <div class="col-md-5"></div>
+       <div class="col-md-5 pull-right text-right">
+        <h3>Tomorrow's Predicted Temperature</h3>
+        <hr>
+        <div class="d-flex justify-content-between">
+          <p class="circle pull-right"><span id="prediction"></span></p>
         </div>
-      </div>  
+      </div>
     </div>
-  </div>  
+  </div>
+
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>  
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="/static/js/app.js"></script>

@@ -1,3 +1,3 @@
-Date,Actual_avg_temp(F),Predicted_temp(F)
+Date,Actual_avg_temp(F),Predicted_temp_next_day(F)
 2019-01-22,42.3,44
 2019-01-21,42.8,45
