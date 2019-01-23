@@ -26,26 +26,26 @@ function get_owm(selected_city) {
 	d3.json(`/prediction?selected_city=${selected_city}`).then((predData) => {
 	//console.log(predData[0].Predicted_temp_next_day) 
 	var predictedTemp = {Temp_tomorrow: predData[0].Predicted_temp_next_day};
-	console.log(predictedTemp)
+	//console.log(predictedTemp)
 	Object.entries(predictedTemp).forEach(([key,value]) =>{
-		var span = document.getElementById("prediction").innerHTML=`${value}`;
+		var span = document.getElementById("prediction").innerHTML =`${value}`;
 		span.html("")
 	})
 	});
 
 	var bgImage = {
-		Amsterdam: '/static/css/img/ams.jpg',
-		Irvine: 'placeholder.jpg',
-		Lihue: '/static/css/img/kauai.jpg',
-		Kyoto: '/static/css/img/kyoto.jpg',
-		Nice: '/static/css/img/stjeannet.jpg',
-		Manly: '/static/css/img/manly.jpg',
-		Salvador: '/static/css/img/salvador.jpg'
+		Amsterdam: 'url(/static/css/img/ams.jpg)',
+		Irvine: 'url(/static/css/img/irvine.jpg)',
+		Lihue: 'url(/static/css/img/kauai.jpg)',
+		Kyoto: 'url(/static/css/img/kyoto.jpg)',
+		Nice: 'url(/static/css/img/stjeannet.jpg)',
+		Manly: 'url(/static/css/img/manly.jpg)',
+		Salvador: 'url(/static/css/img/salvador.jpg)'
 		};
-	//Object.entries(bgImage).forEach(([key,value]) => {	
-	//var bgBody = document.getElementByTagName("body");
+		var selected_value = bgImage[selected_city]
+		console.log(selected_value)
 
-	//})
+		var bgBody = document.body.style["background-image"] = selected_value;
 
 
 }
