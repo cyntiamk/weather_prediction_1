@@ -38,7 +38,7 @@ function get_owm(selected_city) {
 		Irvine: 'url(/static/css/img/irvine.jpg)',
 		Lihue: 'url(/static/css/img/kauai.jpg)',
 		Kyoto: 'url(/static/css/img/kyoto.jpg)',
-		Nice: 'url(/static/css/img/stjeannet.jpg)',
+		Nice: 'url(/static/css/img/nice1.jpg)',
 		Manly: 'url(/static/css/img/manly.jpg)',
 		Salvador: 'url(/static/css/img/salvador.jpg)'
 		};
